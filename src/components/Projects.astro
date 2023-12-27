@@ -1,0 +1,30 @@
+---
+import TailwindIcon from "../icons/Tailwind.astro";
+import NextJSIcon from "../icons/NextJS.astro";
+
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJSIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: TailwindIcon,
+    },
+};
+const PROJECTS = [
+    {
+        title: "SVGL - A beautiful library with SVG logos",
+        description:
+            "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+        link: "https://svgl.vercel.app/",
+        github: "https://github.com/pheralb/svgl",
+        image: "/projects/svgl.webp",
+        tags: [TAGS.NEXT, TAGS.TAILWIND],
+    },
+];
+---
+
+
