@@ -3,7 +3,7 @@ import "@fontsource/onest/200.css";
 import "@fontsource/onest/400.css";
 import "@fontsource/onest/600.css";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -24,9 +24,9 @@ const { description, title } = Astro.props;
 		<title>{title}</title>
 	</head>
 
-	<body class="relative">
+	<body class="relative text-black dark:text-white">
 		<div
-			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
 		>
 		</div>
 		<Header />
@@ -43,6 +43,7 @@ const { description, title } = Astro.props;
 	html {
 		font-family: "Onest", system-ui, sans-serif;
 		scroll-behavior: smooth;
+		color: white;
 	}
 
 	body {
@@ -50,12 +51,18 @@ const { description, title } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		color: white;
+		overscroll-behavior: none;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		html {
 			scroll-behavior: auto;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		body {
+			color: rgba(255, 255, 255, .9);
 		}
 	}
 </style>

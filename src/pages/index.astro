@@ -1,22 +1,26 @@
 ---
-import LinkedInIcon from "../icons/LinkedIn.astro";
-import GitHubIcon from "../icons/GitHub.astro";
-import EmailIcon from "../icons/Email.astro";
-import CodeIcon from "../icons/Code.astro";
-import BriefcaseIcon from "../icons/Briefcase.astro";
 import Layout from "../layouts/Layout.astro";
+
 import Badge from "../components/Badge.astro";
 import SocialPill from "../components/SocialPill.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+
+import ProfileCheck from "../icons/ProfileCheck.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import EmailIcon from "../icons/Email.astro";
+import CodeIcon from "../icons/Code.astro";
+import BriefcaseIcon from "../icons/Briefcase.astro";
 ---
 
 <Layout
 	title="Portofolio Jorge G. - Desarrollador y Programador +3 años de experiencia"
 	description="Contrata a Jorge para constuir experiecias web, desarrollo de aplicacion, usos de tecnologias web, etc"
 >
-	<main>
+	<main class="px-4">
 		<SectionContainer class="py-44 pb-32">
 			<img
 				class="rounded-full size-12 lg:size-16 mb-4"
@@ -24,7 +28,7 @@ import Projects from "../components/Projects.astro";
 				alt="midudev photo"
 			/>
 			<h1
-				class="text-white text-3xl md:text-4xl font-bold flex flex-row gap-x-4 lg:pb-10"
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
 			>
 				Hey, soy Jorge G. <a
 					href="https://linkedin.com"
@@ -35,14 +39,14 @@ import Projects from "../components/Projects.astro";
 					<Badge>Full Disponibilidad</Badge>
 				</a>
 			</h1>
-			<h2 class="text-xl lg:text-2xl text-balance mx-w-[700px]">
+			<h2 class="text-xl lg:text-2xl text-balance mx-w-[700px] text-white dark:text-white">
 				<span class="text-yellow-200/90">+3años de experiencia.</span>
-				Desarrollador Web y creador de contenido.
+				Programador Full Stack y Asesor Empresarial 
 				<span class="text-red-200/90"
-					>Especializado en creación de aplicaciones y sistemas.</span
+					>Conocimientos de tecnologias Frotennd, backend y estructurales</span
 				>
 			</h2>
-			<nav class="flex gap-x-4 mt-8 flex-wrap">
+			<nav class="flex gap-x-4 mt-8 flex-wrap text-white">
 				<SocialPill class="https://linkedin.com">
 					<LinkedInIcon class="size-4 md:size-6" />LinkedIn
 				</SocialPill>
@@ -55,18 +59,25 @@ import Projects from "../components/Projects.astro";
 			</nav>
 		</SectionContainer>
 		<SectionContainer id="experiencia">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">
 				<BriefcaseIcon class="size-7" />
 				Experiencia Laboral
 			</h2>
 			<Experience />
 		</SectionContainer>
 		<SectionContainer id="proyectos">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">
 				<CodeIcon class="size-7" />
 				Proyectos
 			</h2>
 			<Projects />
+		</SectionContainer>
+		<SectionContainer>
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">
+				<ProfileCheck class="size-7" />
+				Sobre mí
+			</h2>
+			<AboutMe />
 		</SectionContainer>
 	</main>
 </Layout>

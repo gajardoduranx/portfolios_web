@@ -1,6 +1,9 @@
 ---
 import TailwindIcon from "../icons/Tailwind.astro";
 import NextJSIcon from "../icons/NextJS.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import LinkButton from "./LinkButton.astro";
+import WebsiteIcon from '../icons/Website.astro'
 
 const TAGS = {
     NEXT: {
@@ -24,14 +27,21 @@ const PROJECTS = [
         image: "/projects/svgl.webp",
         tags: [TAGS.NEXT, TAGS.TAILWIND],
     },
+    {
+        title: 'AdventJS - Retos de programación con JavaScript y TypeScript',
+        decription: "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS",
+        link: "https://adventjs.dev",
+        image: "/projects/adventjs.webp",
+        tags: [TAGS.NEXT, TAGS.TAILWIND]
+    }
 ];
 ---
 
 {
-    PROJECTS.map(({ title, description, image, tags }) => (
-        <article>
+    PROJECTS.map(({ title, description, image, tags, github, link }) => (
+        <article class="mb-12">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <p class="text-lg mb-4 text-pretty text-white">{description}</p>
             <ul class="flex gap-x-2 flex-row mb-2">
                 {tags.map((tag) => (
                     <li>
@@ -50,6 +60,18 @@ const PROJECTS = [
                 loading="lazy"
                 class="rounded shadow-2xl shadow-white/10 aspect-video"
             />
+            <footer class="flex gap-x-4 items-end justify-start mt-4">
+                {github && (
+                    <LinkButton href={github}>
+                        <GitHubIcon class="size-6"/>
+                        Ver código fuente
+                    </LinkButton>
+                )}
+                <LinkButton href={link}>
+                    <WebsiteIcon />
+                    Ir al sitio web
+                </LinkButton>
+            </footer>
         </article>
     ))
 }
